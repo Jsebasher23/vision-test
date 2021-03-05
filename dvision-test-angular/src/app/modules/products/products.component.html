@@ -1,0 +1,27 @@
+<div class="container">
+    <dx-data-grid id="gridContainer" 
+    [dataSource]="products" 
+    [showBorders]="true" 
+    [showColumnLines]="false"
+    [remoteOperations]="true"
+    [repaintChangesOnly]="true" 
+    [rowAlternationEnabled]="true">
+
+        <dxo-editing 
+        mode="row"        
+        [useIcons]="true">
+        </dxo-editing>
+
+        <dxi-column dataField="ProductName" [width]="170" caption="Producto"></dxi-column>
+        <dxi-column dataField="ProductUniPrice" caption="Valor Unitario"></dxi-column>
+        <dxi-column
+            dataField="ProductCategoryID"
+            caption="Categorias">         
+            <dxo-lookup
+                [dataSource]="category"
+                displayExpr="CategoryName"
+                valueExpr="CategoryID">
+            </dxo-lookup>
+        </dxi-column>
+    </dx-data-grid>
+</div>

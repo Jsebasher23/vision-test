@@ -1,0 +1,72 @@
+<!-- <div class="container">
+    <dx-data-grid id="gridContainer" 
+    [dataSource]="customer" 
+    keyExpr="CustomerID"
+    [showBorders]="true" 
+    [showColumnLines]="false"
+    [remoteOperations]="true"
+    [repaintChangesOnly]="true" 
+    [rowAlternationEnabled]="true"
+    (onSaving)="onSaving($event)">
+    <dxo-paging [pageSize]="12"></dxo-paging>
+    <dxo-load-panel [enabled]="true"></dxo-load-panel>
+    
+
+        <dxo-editing 
+        mode="row"
+        [allowUpdating]="true"
+        [allowDeleting]="deleteCustomers"
+        [allowAdding]="addCustomers"
+        [useIcons]="true"        >
+        </dxo-editing>
+                
+        <dxi-column dataField="CustomerTypeIde" [width]="70" caption="Tipo Doc"></dxi-column>
+        <dxi-column dataField="CustomerNumIde" caption="Nùmero Doc."></dxi-column>
+        <dxi-column dataField="CustomerName" caption="Nombres"></dxi-column>
+        <dxi-column dataField="CustomerLastName" caption="Apellidos"></dxi-column>
+        <dxi-column dataField="CustomerEmail" [width]="170" caption="Correo"></dxi-column>
+        <dxi-column dataField="CustomerAGE" [width]="70" caption="Edad"></dxi-column>
+        <dxi-column dataField="CustomerBirthDate" dataType="date" caption="Nacimiento"></dxi-column>
+        <dxi-column type="buttons" [width]="110">
+            <dxi-button name="edit"></dxi-button>
+            <dxi-button name="delete"></dxi-button>            
+        </dxi-column> 
+    </dx-data-grid>
+</div> -->
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Tipo Doc</th>
+                <th scope="col">Numero Doc</th>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Email</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Fecha Nacimiento</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers;">                
+                <td>{{customer.CustomerTypeIde}}</td>
+                <td>{{customer.CustomerNumIde}}</td>
+                <td>{{customer.CustomerName}}</td>
+                <td>{{customer.CustomerLastName}}</td>
+                <td>{{customer.CustomerEmail}}</td>
+                <td>{{customer.CustomerAGE}}</td>
+                <td>{{customer.CustomerBirthDate}}</td>
+                <!-- <td>
+                    <button 
+                        type="button" class="btn btn-light-mr-1" 
+                        (click)="editCustomer(customer.CustomerID)"                       
+                        ><i class="fa fa-pencil"></i></button>
+                    <button 
+                        type="button" class="btn btn-light-mr-1"><i class="fa fa-trash"></i>
+                    </button>                    
+                </td> -->
+            </tr>            
+        </tbody>
+    </table>
+    
+</div>

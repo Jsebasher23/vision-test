@@ -1,0 +1,25 @@
+<form action="">
+    <input type="hidden" name="CustomerID"
+    [value]="formData.CustomerID">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control form-control-lg" name="CustomerName"
+        #CustomerName="ngModel" [(ngModel)]="formData.CustomerName">
+    </div>
+    <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" class="form-control form-control-lg" name="CustomerLastName"
+        #CustomerLastName="ngModel" [(ngModel)]="formData.CustomerLastName">
+    </div>
+    <div class="form-group">
+        <label>Tipo Documento</label>
+        <input type="text" class="form-control form-control-lg" name="CustomerTypeIde"
+        #CustomerTypeIde="ngModel" [(ngModel)]="formData.CustomerTypeIde">
+    </div>
+    <div class="form-group">
+        <label>Numero Documento</label>
+        <input type="text" class="form-control form-control-lg" name="CustomerNumIde"
+        #CustomerNumIde="ngModel" [(ngModel)]="formData.CustomerNumIde">
+    </div>
+</form>
+

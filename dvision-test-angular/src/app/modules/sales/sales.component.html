@@ -1,0 +1,136 @@
+<div class="m-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card p-3">
+                <form action="" #form="ngForm" (submit)="onSubmit(form)">
+                    <input type="hidden" name="SaleID" [value]="saleService.formData.SaleID">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Customer</label>
+                                <select name="SaleCustomerID" #SaleCustomerID="ngModel"
+                                    [(ngModel)]="saleService.formData.SaleCustomerID" class="form-control">
+                                    <option value="0" disabled>-Select-</option>
+                                    <option *ngFor="let item of customerList" value="{{item.CustomerID}}">
+                                        {{item.CustomerName}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Trader</label>
+                                <select name="SaleTraderID" #SaleTraderID="ngModel"
+                                    [(ngModel)]="saleService.formData.SaleTraderID" class="form-control">
+                                    <option value="0" disabled>-Select-</option>
+                                    <option *ngFor="let item of traderList" value="{{item.TraderID}}">
+                                        {{item.TraderName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Total</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">$</div>
+                                    </div>
+                                    <input name="SaleTOTAL" #SaleTOTAL="ngModel"
+                                        [(ngModel)]="saleService.formData.SaleTOTAL" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                                <div class="col-10">
+                                  <input class="form-control" name="SaleDate" #SaleDate="ngModel" [(ngModel)]="saleService.formData.SaleDate" type="date" value="SaleDate" id="example-date-input">
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label>Apellido</label>
+                        <input type="text" class="form-control form-control-lg" name="CustomerLastName"
+                        #CustomerLastName="ngModel" [(ngModel)]="formData.CustomerLastName">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo Documento</label>
+                        <input type="text" class="form-control form-control-lg" name="CustomerTypeIde"
+                        #CustomerTypeIde="ngModel" [(ngModel)]="formData.CustomerTypeIde">
+                    </div>
+                    <div class="form-group">
+                        <label>Numero Documento</label>
+                        <input type="text" class="form-control form-control-lg" name="CustomerNumIde"
+                        #CustomerNumIde="ngModel" [(ngModel)]="formData.CustomerNumIde">
+                    </div> -->
+
+                    <table class="table table-hover">
+                        <thead class="thead-dark m-auto">
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>
+                                <a class="btn btn-sm btn-success text-white"
+                                    (click)="editDetails(null,saleService.formData.SaleID)"><i class="fa fa-plus"></i>
+                                    Add
+                                    Product</a>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngIf="saleService.saleDetail.length==0">
+                                <td class="font-italic text-center" colspan="5">
+                                    No product selected for this sale.
+                                </td>
+                            </tr>
+
+                            <tr *ngFor="let item of saleService.saleDetail;let i=index;">
+                                <td>{{item.SDetailName}}</td>
+                                <td>{{item.SDetailPrice}}</td>
+                                <td>{{item.SDetailQuantity}}</td>
+                                <td>{{item.SDetailTOTAL}}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-info text-white"
+                                        (click)="editDetails(i,saleService.saleDetail.SDetailID)"><i class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-sm btn-danger text-white ml-1"
+                                        (click)="deleteSaleDetails(item.SDetailID,i)"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <table class="table table-hover"
+                
+                data-height="460"
+                data-pagination="true"
+                data-page-size="25">
+                    <thead class="thead-dark m-auto">
+                        <th>Sale Id</th>
+                        <th>Product</th>
+                        <th>Unite Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>                        
+                    </thead>
+                    <tbody>                        
+                        <tr *ngFor="let item of saleDetailsList">
+                            <td>{{item.SDetailSaleID}}</td>
+                            <td>{{item.SDetailName}}</td>
+                            <td>{{item.SDetailPrice}}</td>
+                            <td>{{item.SDetailQuantity}}</td>
+                            <td>{{item.SDetailTOTAL}}</td>
+                            <td>
+                                <a class="btn btn-sm btn-danger text-white ml-1"
+                                    (click)="deleteDetail(item.SDetailID)"><i class="fa fa-trash"></i></a>
+                            </td>                       
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
