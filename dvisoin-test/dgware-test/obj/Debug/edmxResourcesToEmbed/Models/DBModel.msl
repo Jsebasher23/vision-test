@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DIgitalWarePruebaModelStoreContainer" CdmEntityContainer="DBModel">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="DIgitalWarePruebaModel.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="DIgitalWarePruebaModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumIde" ColumnName="CustomerNumIde" />
+          <ScalarProperty Name="CustomerTypeIde" ColumnName="CustomerTypeIde" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+          <ScalarProperty Name="CustomerBirthDate" ColumnName="CustomerBirthDate" />
+          <ScalarProperty Name="CustomerAGE" ColumnName="CustomerAGE" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="DIgitalWarePruebaModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductUniPrice" ColumnName="ProductUniPrice" />
+          <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleDetails">
+      <EntityTypeMapping TypeName="DIgitalWarePruebaModel.SaleDetails">
+        <MappingFragment StoreEntitySet="SaleDetails">
+          <ScalarProperty Name="SDetailName" ColumnName="SDetailName" />
+          <ScalarProperty Name="SDetailPrice" ColumnName="SDetailPrice" />
+          <ScalarProperty Name="SDetailID" ColumnName="SDetailID" />
+          <ScalarProperty Name="SDetailSaleID" ColumnName="SDetailSaleID" />
+          <ScalarProperty Name="SDetailProductID" ColumnName="SDetailProductID" />
+          <ScalarProperty Name="SDetailTOTAL" ColumnName="SDetailTOTAL" />
+          <ScalarProperty Name="SDetailQuantity" ColumnName="SDetailQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="DIgitalWarePruebaModel.Sales">
+        <MappingFragment StoreEntitySet="Sales">
+          <ScalarProperty Name="SaleID" ColumnName="SaleID" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="SaleCustomerID" ColumnName="SaleCustomerID" />
+          <ScalarProperty Name="SaleTraderID" ColumnName="SaleTraderID" />
+          <ScalarProperty Name="SaleTOTAL" ColumnName="SaleTOTAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trader">
+      <EntityTypeMapping TypeName="DIgitalWarePruebaModel.Trader">
+        <MappingFragment StoreEntitySet="Trader">
+          <ScalarProperty Name="TraderID" ColumnName="TraderID" />
+          <ScalarProperty Name="TraderNumIde" ColumnName="TraderNumIde" />
+          <ScalarProperty Name="TraderTypeIde" ColumnName="TraderTypeIde" />
+          <ScalarProperty Name="TraderName" ColumnName="TraderName" />
+          <ScalarProperty Name="TraderPhone" ColumnName="TraderPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
